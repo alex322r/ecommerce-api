@@ -10,7 +10,7 @@ const PORT = 3000
 
 app.get('/ping', (_, res) => {
 
-    console.log('someone pinged here!!')
+    console.log('someone pinged here!!!')
     res.send('pong')
 })
 
