@@ -1,6 +1,6 @@
 // import pool from './db'
 
-
+// comentario
 // const products = [
 //     {
 //         "id": 1,
