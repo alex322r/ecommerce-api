@@ -1,8 +1,11 @@
 
 import pool from "../db"
 
-export const getProducts = async () => {
-    const [productQuery] = await pool.query('SELECT * FROM products')
+export const getProducts = async (limit: string | undefined) => {
+
+    const [productQuery] = limit ?
+        await pool.query('SELECT * FROM products LIMIT ?', [+limit]) :
+        await pool.query('SELECT * FROM products')
     return productQuery
 }
 

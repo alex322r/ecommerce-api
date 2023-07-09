@@ -3,9 +3,10 @@ import { Request, Response } from "express"
 import { getProduct, getProducts, getProductsByCategory } from "../services.ts/products"
 
 
-export const getItems = async (_: Request, res: Response) => {
+export const getItems = async (req: Request, res: Response) => {
     try {
-        const items = await getProducts()
+        const { limit } = req.query
+        const items = await getProducts(limit as string | undefined)
         res.send(items)
     } catch (e) {
         res.status(500).send({ error: "something goes wrong" })
