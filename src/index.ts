@@ -1,5 +1,4 @@
 import express from 'express'
-
 import routerIndex from './routes'
 
 const app = express()
@@ -21,4 +20,3 @@ app.listen(PORT, () => {
 }
 )
 
-console.log(process.platform)
